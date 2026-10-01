@@ -1,0 +1,86 @@
+.thread-list,
+.draft-list {
+  background: #0a0a0a;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+
+  .list-item {
+    position: relative;
+    background: #0a0a0a;
+    color: #cccccc;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: background-color 300ms ease-out, color 300ms ease-out;
+
+    &:hover:not(.selected):not(.focused) {
+      background: #1a1a1a;
+    }
+
+    &.unread:not(.selected):not(.focused) {
+      background: #1a1a1a;
+      color: #fafafa;
+    }
+
+    &.unread:hover:not(.selected):not(.focused) {
+      background: #1a1a1a;
+    }
+
+    &.selected:not(.focused) {
+      background: #404040;
+      color: #fafafa;
+      border-bottom-color: rgba(255, 255, 255, 0.1);
+    }
+
+    &.focused,
+    &.selected.focused {
+      background: #404040;
+      color: #fafafa;
+      border-bottom-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .participants,
+    .subject {
+      color: inherit;
+    }
+
+    .snippet,
+    .timestamp {
+      color: inherit;
+      opacity: 0.6;
+    }
+
+    .timestamp,
+    .message-count {
+      font-family: 'Poppins', Arial, sans-serif;
+      font-size: 11px;
+    }
+
+    .mail-label {
+      border-radius: 0;
+      box-shadow: none;
+      font-family: 'Poppins', Arial, sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.04em;
+    }
+  }
+
+  // Mailspring's stock star is yellow, outside the monochrome palette.
+  .thread-icon-star,
+  .thread-icon-star-on-hover,
+  .star-button .fa-star,
+  .star-button .fa-star-o {
+    filter: grayscale(1);
+    color: #cccccc;
+  }
+
+}
+
+.thread-list .list-item:hover .list-column-HoverActions .inner {
+  background-image: linear-gradient(to right, transparent, #1a1a1a 50%);
+}
+
+.thread-list .list-item.selected:hover .list-column-HoverActions .inner {
+  background-image: linear-gradient(to right, transparent, #404040 50%);
+}
+
+.thread-list .list-item.focused:hover .list-column-HoverActions .inner {
+  background-image: linear-gradient(to right, transparent, #404040 50%);
+}

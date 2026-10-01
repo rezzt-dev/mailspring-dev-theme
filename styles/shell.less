@@ -1,0 +1,155 @@
+@font-face {
+  font-family: 'Poppins';
+  src: url('../assets/fonts/Poppins-Regular.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('../assets/fonts/Poppins-Medium.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('../assets/fonts/Poppins-SemiBold.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('../assets/fonts/Poppins-Bold.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('../assets/fonts/Poppins-Italic.ttf') format('truetype');
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+}
+
+// Mail content lives in its own frame; these rules only touch application UI.
+body,
+mailspring-workspace {
+  font-family: 'Poppins', 'Arial', sans-serif;
+  color: @text-color;
+  background: @background-primary;
+}
+
+body.platform-win32,
+body.platform-win32 mailspring-workspace,
+body.platform-win32 input,
+body.platform-win32 button {
+  font-family: 'Poppins', 'Arial', sans-serif;
+}
+
+mailspring-workspace {
+  --font-weight-semi-bold: 600;
+  --system-accent: #e5e5e5;
+  --system-accent-dark: #e5e5e5;
+}
+
+.sheet-toolbar-container,
+body.platform-darwin .sheet-toolbar-container,
+body.platform-darwin.is-blurred .sheet-toolbar-container,
+body.platform-linux .sheet-toolbar-container,
+body.platform-linux.is-blurred .sheet-toolbar-container,
+body.platform-win32 .sheet-toolbar-container,
+body.platform-win32.is-blurred .sheet-toolbar-container {
+  background: @toolbar-background-color;
+  background-image: none;
+  border-bottom: 1px solid @border-color-divider;
+}
+
+.sheet-toolbar {
+  background: transparent;
+  background-image: none;
+  border-bottom: 0;
+  box-shadow: none;
+}
+
+.sheet,
+.sheet-container,
+.sheet-toolbar-container,
+.toolbar-menu-control,
+.toolbar-menu-control .btn-toolbar {
+  background-color: #0a0a0a;
+}
+
+.toolbar-menu-control .btn-toolbar {
+  color: #fafafa;
+  border: 0;
+  box-shadow: none;
+}
+
+.toolbar-menu-control .btn-toolbar:hover {
+  background-color: #1a1a1a;
+  color: #fafafa;
+}
+
+.toolbar-window-controls button {
+  filter: grayscale(1) brightness(1.25);
+}
+
+.sheet-toolbar .btn,
+.sheet-toolbar .btn-toolbar {
+  border-radius: 0;
+  box-shadow: none;
+  background-image: none;
+}
+
+.sheet-toolbar .btn-toolbar:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+// Surfaces are separated with a 1px white tint, not elevation shadows.
+.account-sidebar,
+.thread-list,
+.draft-list,
+#message-list,
+.composer-inner-wrap {
+  box-shadow: none;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid #0a0a0a;
+  border-radius: 0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+::selection {
+  background: #e5e5e5;
+  color: #000000;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  mailspring-workspace *,
+  mailspring-workspace *::before,
+  mailspring-workspace *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}

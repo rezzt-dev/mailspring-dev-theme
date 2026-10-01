@@ -1,0 +1,50 @@
+.account-sidebar {
+  background: #0a0a0a;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.account-sidebar .outline-view {
+  .heading {
+    color: rgba(255, 255, 255, 0.4);
+    font-family: 'Poppins', Arial, sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+
+  .item {
+    border-radius: 0;
+    border-left: 3px solid transparent;
+    transition: background-color 300ms ease-out, color 300ms ease-out,
+      border-color 300ms ease-out;
+
+    &:hover {
+      background: #1a1a1a;
+      color: #e5e5e5;
+    }
+
+    &.selected {
+      background: #404040;
+      border-left-color: #e5e5e5;
+      color: #e5e5e5;
+    }
+
+    .item-count-box {
+      font-family: 'Poppins', Arial, sans-serif;
+      font-size: 10px;
+      font-weight: 500;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: none;
+      border-radius: 0;
+    }
+
+    .item-action-button {
+      border-radius: 0;
+    }
+  }
+}
+
+.account-switcher {
+  color: #fafafa;
+}

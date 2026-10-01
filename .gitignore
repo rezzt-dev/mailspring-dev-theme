@@ -1,0 +1,6 @@
+# operating system files
+/.DS_Store
+
+# local documentation resources
+/.docs/agent-skills/
+/.docs/resources/

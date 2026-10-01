@@ -1,0 +1,160 @@
+.btn,
+.btn-toolbar,
+button,
+input,
+textarea,
+select,
+.dropdown-menu,
+.menu,
+.modal,
+.popover,
+.tooltip {
+  border-radius: 0;
+}
+
+button,
+input,
+textarea,
+select,
+.menu,
+.dropdown-menu,
+.modal,
+.popover {
+  font-family: 'Poppins', Arial, sans-serif;
+}
+
+.btn,
+.btn-toolbar {
+  background: #0a0a0a;
+  background-image: none;
+  color: #fafafa;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: none;
+  transition: background-color 300ms ease-out, color 300ms ease-out,
+    border-color 300ms ease-out;
+
+  &:hover:not(.btn-disabled) {
+    background: #e5e5e5;
+    color: #0a0a0a;
+    border-color: #e5e5e5;
+
+    img.content-mask {
+      background-color: #0a0a0a;
+    }
+  }
+
+  &:focus-visible {
+    outline: 2px solid #e5e5e5;
+    outline-offset: 2px;
+  }
+
+  &.btn-action,
+  &.btn-emphasis {
+    background: #e5e5e5;
+    background-image: none;
+    color: #0a0a0a;
+    border: 1px solid #e5e5e5;
+    box-shadow: none;
+
+    img.content-mask {
+      background-color: #0a0a0a;
+    }
+
+    &:hover:not(.btn-disabled) {
+      background: #e5e5e5;
+      border-color: #e5e5e5;
+    }
+  }
+
+  &.btn-emphasis::before {
+    display: none;
+  }
+
+  &.btn-danger,
+  &.btn-destructive {
+    background: #ff6467;
+    border-color: #ff6467;
+    color: #0a0a0a;
+  }
+}
+
+input:not([type='checkbox']):not([type='radio']),
+textarea,
+select {
+  background-color: #262626;
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #fafafa;
+  box-shadow: none;
+
+  &:focus,
+  &:focus-visible {
+    border-color: rgba(255, 255, 255, 0.6);
+    box-shadow: none;
+  }
+
+  &::placeholder {
+    color: #777777;
+  }
+}
+
+input[type='checkbox'],
+input[type='radio'] {
+  accent-color: #e5e5e5;
+}
+
+// Composer header fields are transparent lines rather than boxed form inputs.
+.composer-inner-wrap input:not([type='checkbox']):not([type='radio']),
+.composer-inner-wrap textarea {
+  background: transparent;
+  border: 0;
+}
+
+.menu,
+.dropdown-menu {
+  background: #262626;
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: none;
+
+  .header-container,
+  .content-container {
+    background: #262626;
+  }
+
+  .item.selected,
+  .item:active {
+    background: #404040;
+    color: #fafafa;
+  }
+
+  .item:not(.active):not(.selected):hover {
+    background: #404040;
+    color: #e5e5e5;
+  }
+
+  .item.divider {
+    color: rgba(255, 255, 255, 0.4);
+    font-family: 'Poppins', Arial, sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+  }
+}
+
+// Popovers, dialogs and chips use the same flat surface treatment.
+.fixed-popover,
+.date-picker-popover,
+.modal,
+.mail-label {
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.fixed-popover,
+.date-picker-popover,
+.modal {
+  background-color: #262626;
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+*:focus-visible {
+  outline-color: #e5e5e5;
+}

@@ -1,0 +1,12 @@
+{
+  "name": "dev-dark",
+  "title": "dev-dark",
+  "displayName": "dev-dark",
+  "theme": "ui",
+  "version": "1.0.0",
+  "description": "a unified dark theme based on rezzt.dev style.",
+  "license": "MIT",
+  "engines": {
+    "mailspring": "*"
+  }
+}
