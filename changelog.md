@@ -17,6 +17,8 @@
 - fijar toda la interfaz nativa en `gilroy`, 12px y minusculas y ampliar hasta 360px el ancho maximo del panel lateral sin alterar el formato de los correos recibidos ni redactados
 - actualizar los metadatos del paquete a `rezzt.dev editorial dark` en la version `1.1.0` para identificar el nuevo sistema visual en mailspring
 - documentar en los ficheros de diseño la sobrescritura tipografica especifica de mailspring sobre las reglas generales de la web
+- oscurecer la paleta monocroma con el lienzo `#080808`, superficies `#101010` y `#111111`, y estados interactivos `#242424` para reforzar la profundidad visual del tema
+- actualizar `readme.md` con los nuevos colores base del sistema visual
 
 ### ENGLISH
 
@@ -33,3 +35,5 @@
 - set the entire native interface to `gilroy`, 12px and lowercase and raise the sidebar maximum width to 360px without changing received or authored email formatting
 - update the package metadata to `rezzt.dev editorial dark` at version `1.1.0` to identify the new visual system in mailspring
 - document the mailspring-specific typography override over the website's general design rules in the design files
+- darken the monochrome palette with the `#080808` canvas, `#101010` and `#111111` surfaces, and `#242424` interactive states to reinforce the theme's visual depth
+- update `readme.md` with the visual system's new base colors

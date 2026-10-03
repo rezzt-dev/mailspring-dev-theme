@@ -4,7 +4,7 @@
 .toolbar-DraftList,
 .thread-list,
 .draft-list {
-  background: #131313;
+  background: #0b0b0b;
 }
 
 .thread-list,
@@ -15,7 +15,7 @@
   .list-item,
   .list-tabular-item {
     position: relative;
-    background: #131313;
+    background: #0b0b0b;
     color: @text-color-subtle;
     border-bottom: 1px solid @white-10 !important;
     transition: background-color 300ms ease-out, color 300ms ease-out,
@@ -33,7 +33,7 @@
     }
 
     &:hover:not(.selected):not(.focused) {
-      background: #181818 !important;
+      background: #141414 !important;
 
       &::before {
         background: @white-50;
@@ -41,12 +41,12 @@
     }
 
     &.unread:not(.selected):not(.focused) {
-      background: #1a1a1a;
+      background: #101010;
       color: #ffffff;
     }
 
     &.selected:not(.focused) {
-      background: #1f1f1f;
+      background: #1a1a1a;
       color: #ffffff;
 
       &::before {
@@ -57,7 +57,7 @@
     &.focused,
     &.selected.focused,
     &.keyboard-cursor {
-      background: #353535 !important;
+      background: #242424 !important;
       color: #ffffff;
 
       &::before {
@@ -109,22 +109,22 @@
 }
 
 .thread-list .list-item:hover .list-column-HoverActions .inner {
-  background-image: linear-gradient(to right, transparent, #181818 50%);
+  background-image: linear-gradient(to right, transparent, #141414 50%);
 }
 
 .thread-list .list-item.selected:hover .list-column-HoverActions .inner {
-  background-image: linear-gradient(to right, transparent, #1f1f1f 50%);
+  background-image: linear-gradient(to right, transparent, #1a1a1a 50%);
 }
 
 .thread-list .list-item.focused:hover .list-column-HoverActions .inner,
 .thread-list.handler-split .list-item.selected:hover .list-column-HoverActions .inner {
-  background-image: linear-gradient(to right, transparent, #353535 50%);
+  background-image: linear-gradient(to right, transparent, #242424 50%);
 }
 
 .thread-list-empty-folder-bar,
 .found-in-mail-enabled-bar {
   color: @text-color-subtle;
-  background: #1a1a1a;
+  background: #101010;
   border-color: @white-10;
 }
 

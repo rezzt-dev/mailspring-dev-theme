@@ -14,7 +14,7 @@ a professional dark theme for mailspring based on the rezzt.dev editorial visual
 
 - use gilroy at 12px across the native application interface.
 - present every native interface label in lowercase.
-- use `#121212` for the main canvas, `#1a1a1a`/`#1b1b1b` for surfaces and `#141414` for fields.
+- use `#080808` for the main canvas, `#101010`/`#111111` for surfaces and `#0d0d0d` for fields.
 - use white-alpha separators, square corners and monochrome inversion for interactive states.
 
 received html emails and authored message content retain their original formatting and capitalisation. native window elements follow the operating system theme.
