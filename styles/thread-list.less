@@ -1,44 +1,81 @@
+.column-ThreadList,
+.column-DraftList,
+.toolbar-ThreadList,
+.toolbar-DraftList,
 .thread-list,
 .draft-list {
-  background: #0a0a0a;
-  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  background: #131313;
+}
 
-  .list-item {
+.thread-list,
+.draft-list {
+  border-right: 1px solid @white-10;
+  box-shadow: none;
+
+  .list-item,
+  .list-tabular-item {
     position: relative;
-    background: #0a0a0a;
-    color: #cccccc;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    transition: background-color 300ms ease-out, color 300ms ease-out;
+    background: #131313;
+    color: @text-color-subtle;
+    border-bottom: 1px solid @white-10 !important;
+    transition: background-color 300ms ease-out, color 300ms ease-out,
+      border-color 300ms ease-out;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 2px;
+      background: transparent;
+      transition: background-color 300ms ease-out;
+    }
 
     &:hover:not(.selected):not(.focused) {
-      background: #1a1a1a;
+      background: #181818 !important;
+
+      &::before {
+        background: @white-50;
+      }
     }
 
     &.unread:not(.selected):not(.focused) {
       background: #1a1a1a;
-      color: #fafafa;
-    }
-
-    &.unread:hover:not(.selected):not(.focused) {
-      background: #1a1a1a;
+      color: #ffffff;
     }
 
     &.selected:not(.focused) {
-      background: #404040;
-      color: #fafafa;
-      border-bottom-color: rgba(255, 255, 255, 0.1);
+      background: #1f1f1f;
+      color: #ffffff;
+
+      &::before {
+        background: @white-50;
+      }
     }
 
     &.focused,
-    &.selected.focused {
-      background: #404040;
-      color: #fafafa;
-      border-bottom-color: rgba(255, 255, 255, 0.1);
+    &.selected.focused,
+    &.keyboard-cursor {
+      background: #353535 !important;
+      color: #ffffff;
+
+      &::before {
+        background: #ffffff;
+      }
     }
 
     .participants,
     .subject {
       color: inherit;
+    }
+
+    .participants,
+    .subject,
+    .snippet,
+    .timestamp,
+    .message-count {
+      font-size: 12px;
     }
 
     .snippet,
@@ -49,38 +86,57 @@
 
     .timestamp,
     .message-count {
-      font-family: 'Poppins', Arial, sans-serif;
-      font-size: 11px;
+      font-family: @font-family-sans-serif;
+      font-weight: 500;
     }
 
     .mail-label {
       border-radius: 0;
       box-shadow: none;
-      font-family: 'Poppins', Arial, sans-serif;
-      font-size: 10px;
-      letter-spacing: 0.04em;
+      font-family: @font-family-sans-serif;
+      letter-spacing: 0.06em;
     }
   }
 
-  // Mailspring's stock star is yellow, outside the monochrome palette.
   .thread-icon-star,
   .thread-icon-star-on-hover,
   .star-button .fa-star,
-  .star-button .fa-star-o {
+  .star-button .fa-star-o,
+  .mail-important-icon {
     filter: grayscale(1);
-    color: #cccccc;
+    color: @text-color-subtle;
   }
-
 }
 
 .thread-list .list-item:hover .list-column-HoverActions .inner {
-  background-image: linear-gradient(to right, transparent, #1a1a1a 50%);
+  background-image: linear-gradient(to right, transparent, #181818 50%);
 }
 
 .thread-list .list-item.selected:hover .list-column-HoverActions .inner {
-  background-image: linear-gradient(to right, transparent, #404040 50%);
+  background-image: linear-gradient(to right, transparent, #1f1f1f 50%);
 }
 
-.thread-list .list-item.focused:hover .list-column-HoverActions .inner {
-  background-image: linear-gradient(to right, transparent, #404040 50%);
+.thread-list .list-item.focused:hover .list-column-HoverActions .inner,
+.thread-list.handler-split .list-item.selected:hover .list-column-HoverActions .inner {
+  background-image: linear-gradient(to right, transparent, #353535 50%);
+}
+
+.thread-list-empty-folder-bar,
+.found-in-mail-enabled-bar {
+  color: @text-color-subtle;
+  background: #1a1a1a;
+  border-color: @white-10;
+}
+
+.swipe-backing.swipe-trash {
+  background: @color-danger !important;
+}
+
+.swipe-backing.swipe-archive,
+.swipe-backing.swipe-all {
+  background: @color-success !important;
+}
+
+.swipe-backing.swipe-snooze {
+  background: #474747 !important;
 }

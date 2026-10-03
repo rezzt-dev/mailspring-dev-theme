@@ -1,0 +1,78 @@
+.notifications {
+  background: #1b1b1b;
+  box-shadow: none;
+}
+
+.notification {
+  background: #1b1b1b;
+  color: @text-color;
+  border: 1px solid @white-10;
+  border-left: 2px solid #ffffff;
+  border-radius: 0;
+  box-shadow: none;
+
+  &.error,
+  &.offline {
+    background: #1b1b1b;
+    border-left-color: @color-danger;
+  }
+
+  .title {
+    color: #ffffff;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+  }
+
+  .subtitle {
+    color: @text-color-subtle;
+    opacity: 1;
+  }
+
+  .action {
+    color: @text-color;
+    border-color: @white-10;
+    border-radius: 0;
+    box-shadow: none;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    transition: background-color 300ms ease-out, color 300ms ease-out;
+
+    &:hover {
+      background: #ffffff;
+      color: #000000;
+      box-shadow: none;
+    }
+  }
+}
+
+.notifications-sticky {
+  .notification-info,
+  .notification-developer,
+  .notification-upgrade,
+  .notification-error,
+  .notification-offline {
+    background: #1b1b1b;
+    color: @text-color;
+    border-bottom: 1px solid @white-10;
+    border-left: 2px solid #ffffff;
+  }
+
+  .notification-error,
+  .notification-offline {
+    border-left-color: @color-danger;
+  }
+
+  .notifications-sticky-item {
+    color: @text-color;
+    border-color: @white-10;
+
+    a,
+    a:hover,
+    a.default,
+    a.default:hover {
+      color: inherit;
+      background: @white-05;
+      border-radius: 0;
+    }
+  }
+}

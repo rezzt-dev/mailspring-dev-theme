@@ -1,0 +1,138 @@
+.preferences-wrap {
+  background: @background-primary;
+  color: @text-color;
+
+  .container-preference-tabs,
+  .container-preference-tabs .preferences-tabs {
+    background: #1b1b1b;
+    border-color: @white-10;
+  }
+
+  .container-preference-tabs .preferences-tabs .item {
+    color: @text-color-subtle;
+    border-radius: 0;
+    border-bottom: 2px solid transparent;
+    transition: background-color 300ms ease-out, color 300ms ease-out,
+      border-color 300ms ease-out;
+
+    &:hover {
+      background: #1f1f1f;
+      color: #ffffff;
+    }
+
+    &.active {
+      background: #353535;
+      color: #ffffff;
+      border-bottom-color: #ffffff;
+      border-radius: 0;
+      box-shadow: none;
+    }
+
+    .name {
+      font-weight: 700;
+      letter-spacing: 0.12em;
+    }
+  }
+
+  .preferences-content {
+    background: @background-primary;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    color: #ffffff;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+  }
+
+  h6,
+  .section-title,
+  label {
+    color: @text-color-subtle;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+  }
+
+  p,
+  .description,
+  .help-text {
+    color: @white-50;
+  }
+
+  section,
+  .shortcut-section-title,
+  .account-details,
+  .identity-item,
+  .mail-rule-item {
+    border-color: @white-10;
+  }
+
+  .container-appearance .appearance-mode {
+    background: #131313;
+    border: 1px solid @white-10;
+    border-radius: 0;
+    transition: border-color 300ms ease-out, background-color 300ms ease-out;
+
+    &:hover {
+      background: #181818;
+      border-color: @white-30;
+    }
+
+    &.active {
+      background: #1f1f1f;
+      border-color: #ffffff;
+      color: #ffffff;
+    }
+  }
+
+  .shortcut .values,
+  .shortcut:hover .values,
+  .shortcut.editing .values {
+    background: #141414;
+    border-radius: 0;
+    outline-color: @white-20;
+    color: @text-color;
+  }
+
+  .platform-note,
+  .well {
+    background: @white-05;
+    border: 1px solid @white-10;
+    border-left: 2px solid @white-40;
+    border-radius: 0;
+    color: @text-color-subtle;
+    box-shadow: none;
+  }
+}
+
+.container-mail-rules,
+.container-identity,
+.preferences-accounts {
+  .list-item,
+  .editable-list-item {
+    background: #131313;
+    border-color: @white-10;
+    border-radius: 0;
+    box-shadow: none;
+
+    &:hover {
+      background: #181818;
+    }
+  }
+}
+
+.theme-picker .theme-option,
+.theme-option {
+  background: #131313;
+  border: 1px solid @white-10;
+  border-radius: 0;
+  box-shadow: none;
+
+  &:hover,
+  &.selected {
+    border-color: #ffffff;
+  }
+}

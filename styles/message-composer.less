@@ -1,114 +1,153 @@
+.column-MessageList,
+.toolbar-MessageList,
+.column-MessageListSidebar,
+.toolbar-MessageListSidebar,
 #message-list {
-  background: #0a0a0a;
+  background: @background-primary;
+}
 
+#message-list {
   .search-match {
-    color: #0a0a0a;
+    color: #000000;
+    background: #ffffff;
+  }
+
+  .messages-wrap .scroll-region-content-inner {
+    padding: 20px;
+    padding-bottom: 40vh;
   }
 
   .message-subject-wrap {
-    margin-top: 18px;
-    margin-bottom: 16px;
+    margin-top: 20px;
+    margin-bottom: 18px;
   }
 
   .message-subject {
-    color: #e5e5e5;
-    font-size: 22px;
+    color: #ffffff;
     font-weight: 700;
-    letter-spacing: -0.03em;
-    line-height: 1.2;
+    letter-spacing: -0.04em;
+    line-height: 1;
   }
 
   .message-item-wrap .message-item-white-wrap,
-  .message-item-wrap.collapsed .message-item-white-wrap {
-    background: #0a0a0a;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+  .message-item-wrap.collapsed .message-item-white-wrap,
+  .footer-reply-area-wrap,
+  .show-hidden-messages,
+  .message-body-error,
+  .minified-bundle .msg-line,
+  .minified-bundle .num-messages {
+    background: @background-primary;
+    border: 1px solid @white-10;
     border-radius: 0;
     box-shadow: none;
   }
 
-  .message-header .header-row .header-label,
-  .message-header .message-time {
-    color: rgba(255, 255, 255, 0.5);
-    font-family: 'Poppins', Arial, sans-serif;
-    font-size: 10px;
-  }
-
-  .message-header .message-actions {
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 0;
-  }
-
-  .message-header .message-actions .btn-icon {
-    border-right-color: rgba(255, 255, 255, 0.1);
-  }
-
-  .footer-reply-area-wrap {
-    background: #0a0a0a;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-top-style: dashed;
-    border-radius: 0;
-    box-shadow: none;
+  .message-item-wrap .message-item-white-wrap {
     transition: border-color 300ms ease-out;
 
-    &:hover {
-      border-color: rgba(255, 255, 255, 0.4);
+    &:hover,
+    &.focused {
+      border-color: @white-30;
     }
   }
 
-  .show-hidden-messages,
-  .message-body-error {
-    background: #0a0a0a;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+  .message-header .header-row .header-label,
+  .message-header .message-time,
+  .message-participants .participant-type {
+    color: @white-40;
+    font-family: @font-family-sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+  }
+
+  .message-header .message-actions {
+    border: 1px solid @white-20;
     border-radius: 0;
+    box-shadow: none;
+  }
+
+  .message-header .message-actions .btn-icon {
+    border-right-color: @white-10;
+  }
+
+  .footer-reply-area-wrap {
+    border-top-style: dashed;
+    transition: border-color 300ms ease-out;
+
+    &:hover {
+      border-color: @white-40;
+    }
+  }
+
+  .attachments-area,
+  .file-wrap {
+    border-color: @white-10;
+    border-radius: 0;
+    box-shadow: none;
   }
 }
 
 .composer-inner-wrap,
 .composer-full-window .composer-inner-wrap {
-  background: #0a0a0a;
-  color: #fafafa;
+  background: @background-primary;
+  color: @text-color;
+  border-radius: 0;
+  box-shadow: none;
 }
 
 .composer-inner-wrap {
   .composer-drop-cover {
-    background: rgba(18, 18, 18, 0.9);
-    border: 1px dashed #e5e5e5;
+    background: rgba(18, 18, 18, 0.92);
+    border: 1px dashed #ffffff;
     border-radius: 0;
   }
 
   .composer-action-bar-wrap {
-    background: #0a0a0a;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    background: #131313;
+    border-top: 1px solid @white-10;
     border-radius: 0;
     box-shadow: none;
   }
 
   .composer-field-label {
-    color: rgba(255, 255, 255, 0.5);
-    font-family: 'Poppins', Arial, sans-serif;
-    font-size: 10px;
+    color: @white-40;
+    font-family: @font-family-sans-serif;
     font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
+    letter-spacing: 0.16em;
   }
 
   .composer-subject::after,
   .composer-participant-field::after {
-    background: rgba(255, 255, 255, 0.1);
+    background: @white-10;
   }
 
   .RichEditor-root,
   .RichEditor-content,
   .compose-body {
-    color: #fafafa;
-    background: #0a0a0a;
+    color: @text-color;
+    background: @background-primary;
+    font-family: @font-family-sans-serif;
+    font-size: 14px !important;
+  }
+
+  blockquote {
+    border-left: 2px solid @white-20;
+    color: @text-color-subtle;
   }
 }
 
 .RichEditor-toolbar,
 .RichEditor-toolbar .inner {
-  background: #0a0a0a;
-  border-color: rgba(255, 255, 255, 0.1);
+  background: #131313;
+  border-color: @white-10;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.emoji-picker,
+.emoji-button-popover {
+  background: #1b1b1b;
+  border: 1px solid @white-10;
   border-radius: 0;
   box-shadow: none;
 }

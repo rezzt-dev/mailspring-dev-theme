@@ -1,10 +1,10 @@
 {
   "name": "dev-dark",
-  "title": "dev-dark",
-  "displayName": "dev-dark",
+  "title": "rezzt.dev editorial dark",
+  "displayName": "rezzt.dev editorial dark",
   "theme": "ui",
-  "version": "1.0.0",
-  "description": "a unified dark theme based on rezzt.dev style.",
+  "version": "1.1.0",
+  "description": "A professional Mailspring theme based on the rezzt.dev editorial design system.",
   "license": "MIT",
   "engines": {
     "mailspring": "*"

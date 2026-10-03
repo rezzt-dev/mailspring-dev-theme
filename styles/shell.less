@@ -1,71 +1,74 @@
-@font-face {
-  font-family: 'Poppins';
-  src: url('../assets/fonts/Poppins-Regular.ttf') format('truetype');
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
+// Gilroy is intentionally referenced as a system font. Its commercial font
+// files are not redistributed by this theme; see the installation notes.
+body,
+mailspring-workspace,
+button,
+input,
+textarea,
+select {
+  font-family: @font-family-sans-serif;
 }
 
-@font-face {
-  font-family: 'Poppins';
-  src: url('../assets/fonts/Poppins-Medium.ttf') format('truetype');
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Poppins';
-  src: url('../assets/fonts/Poppins-SemiBold.ttf') format('truetype');
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Poppins';
-  src: url('../assets/fonts/Poppins-Bold.ttf') format('truetype');
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Poppins';
-  src: url('../assets/fonts/Poppins-Italic.ttf') format('truetype');
-  font-style: italic;
-  font-weight: 400;
-  font-display: swap;
-}
-
-// Mail content lives in its own frame; these rules only touch application UI.
 body,
 mailspring-workspace {
-  font-family: 'Poppins', 'Arial', sans-serif;
   color: @text-color;
   background: @background-primary;
+  -webkit-font-smoothing: antialiased;
 }
 
-// Keep every native application UI element at 12px and render its text lowercase.
-// Received email content is isolated in its own frame and keeps its original styling.
+// Application chrome is always 12px and lowercase. Email documents live in
+// isolated frames; editor exceptions below preserve authored message casing.
 body,
 body * {
   font-size: 12px !important;
   text-transform: lowercase !important;
 }
 
-body.platform-win32,
-body.platform-win32 mailspring-workspace,
-body.platform-win32 input,
-body.platform-win32 button {
-  font-family: 'Poppins', 'Arial', sans-serif;
+body *,
+body *::before,
+body *::after {
+  border-radius: 0 !important;
+}
+
+// Circles are reserved for identity and status indicators.
+.contact-profile-photo,
+.avatar,
+.profile-photo,
+.spinner,
+.color-option,
+.color-dot,
+.calendar-selector-dot,
+.suggestion-calendar-dot,
+.current-time-indicator div,
+.folder-progress::before {
+  border-radius: 50% !important;
+}
+
+.RichEditor-root,
+.RichEditor-root *,
+.composer-editor-plaintext,
+.composer-editor-plaintext *,
+.compose-body,
+.compose-body * {
+  text-transform: none !important;
 }
 
 mailspring-workspace {
   --font-weight-semi-bold: 600;
-  --system-accent: #e5e5e5;
-  --system-accent-dark: #e5e5e5;
+  --system-accent: #ffffff;
+  --system-accent-dark: #ffffff;
   --account-sidebar-max-width: 360px;
+}
+
+.sheet,
+.sheet-container,
+.column-RootSidebar,
+.column-ThreadList,
+.column-DraftList,
+.column-MessageList,
+.column-MessageListSidebar {
+  background: @background-primary;
+  box-shadow: none;
 }
 
 .sheet-toolbar-container,
@@ -78,36 +81,50 @@ body.platform-win32.is-blurred .sheet-toolbar-container {
   background: @toolbar-background-color;
   background-image: none;
   border-bottom: 1px solid @border-color-divider;
-}
-
-.sheet-toolbar {
-  background: transparent;
-  background-image: none;
-  border-bottom: 0;
   box-shadow: none;
 }
 
-.sheet,
-.sheet-container,
-.sheet-toolbar-container,
-.toolbar-menu-control,
-.toolbar-menu-control .btn-toolbar {
-  background-color: #0a0a0a;
-}
-
-.toolbar-menu-control .btn-toolbar {
-  color: #fafafa;
+.sheet-toolbar {
+  min-height: 42px;
+  background: transparent;
+  background-image: none;
   border: 0;
   box-shadow: none;
 }
 
-.toolbar-menu-control .btn-toolbar:hover {
-  background-color: #1a1a1a;
-  color: #fafafa;
+.toolbar-RootSidebar,
+.toolbar-ThreadList,
+.toolbar-DraftList,
+.toolbar-MessageList,
+.toolbar-MessageListSidebar,
+.toolbar-Preferences,
+.toolbar-Center {
+  height: 100%;
+  background: transparent;
+  border-color: @border-color-divider;
 }
 
-.toolbar-window-controls button {
-  filter: grayscale(1) brightness(1.25);
+.sheet-toolbar .window-title,
+.toolbar-Preferences .window-title {
+  color: @white-40;
+  font-family: @font-family-sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+}
+
+.toolbar-menu-control,
+.toolbar-menu-control .btn-toolbar {
+  background: transparent;
+  color: @text-color;
+  border: 0;
+  box-shadow: none;
+}
+
+.toolbar-menu-control .btn-toolbar:hover,
+.sheet-toolbar .btn-toolbar:hover {
+  background: @white-05;
+  color: #ffffff;
 }
 
 .sheet-toolbar .btn,
@@ -117,17 +134,25 @@ body.platform-win32.is-blurred .sheet-toolbar-container {
   background-image: none;
 }
 
-.sheet-toolbar .btn-toolbar:hover {
-  background: rgba(255, 255, 255, 0.1);
+.sheet-toolbar img.content-mask,
+.btn-icon img.content-mask {
+  background-color: @white-60;
+  transition: background-color 300ms ease-out;
 }
 
-// Surfaces are separated with a 1px white tint, not elevation shadows.
-.account-sidebar,
-.thread-list,
-.draft-list,
-#message-list,
-.composer-inner-wrap {
-  box-shadow: none;
+.sheet-toolbar button:hover img.content-mask,
+.btn-icon:hover img.content-mask {
+  background-color: #ffffff;
+}
+
+.toolbar-window-controls button {
+  filter: grayscale(1);
+  opacity: 0.55;
+  transition: opacity 300ms ease-out;
+}
+
+.toolbar-window-controls:hover button {
+  opacity: 1;
 }
 
 ::-webkit-scrollbar {
@@ -135,30 +160,42 @@ body.platform-win32.is-blurred .sheet-toolbar-container {
   height: 8px;
 }
 
-::-webkit-scrollbar-track {
-  background: #0a0a0a;
+::-webkit-scrollbar-track,
+.scrollbar-track {
+  background: @background-primary;
 }
 
-::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.2);
-  border: 2px solid #0a0a0a;
+::-webkit-scrollbar-thumb,
+.scrollbar-track .scrollbar-handle {
+  background: @white-20;
+  border: 2px solid @background-primary;
   border-radius: 0;
+  box-shadow: none;
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.3);
+::-webkit-scrollbar-thumb:hover,
+.scrollbar-track .scrollbar-handle:hover,
+.scrollbar-track.dragging .scrollbar-handle {
+  background: @white-30;
 }
 
 ::selection {
-  background: #e5e5e5;
+  background: #ffffff;
   color: #000000;
+}
+
+*:focus-visible {
+  outline: 1px solid #ffffff;
+  outline-offset: 2px;
 }
 
 @media (prefers-reduced-motion: reduce) {
   mailspring-workspace *,
   mailspring-workspace *::before,
   mailspring-workspace *::after {
+    scroll-behavior: auto !important;
     transition-duration: 0.01ms !important;
     animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
   }
 }

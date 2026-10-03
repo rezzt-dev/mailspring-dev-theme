@@ -1,42 +1,62 @@
+.column-RootSidebar,
+.account-sidebar,
+.toolbar-RootSidebar {
+  background: #1b1b1b;
+}
+
 .account-sidebar {
-  background: #0a0a0a;
-  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  border-right: 1px solid @white-10;
+  box-shadow: none;
 }
 
 .account-sidebar .outline-view {
   .heading {
-    color: rgba(255, 255, 255, 0.4);
-    font-family: 'Poppins', Arial, sans-serif;
-    font-size: 10px;
+    color: @white-40;
+    font-family: @font-family-sans-serif;
     font-weight: 700;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    padding: 0 12px;
   }
 
   .item {
+    position: relative;
+    min-height: 32px;
+    padding-left: 12px;
     border-radius: 0;
     border-left: 3px solid transparent;
+    color: @text-color-subtle;
     transition: background-color 300ms ease-out, color 300ms ease-out,
       border-color 300ms ease-out;
 
     &:hover {
-      background: #1a1a1a;
-      color: #e5e5e5;
+      background: #1f1f1f;
+      color: #ffffff;
     }
 
     &.selected {
-      background: #404040;
-      border-left-color: #e5e5e5;
-      color: #e5e5e5;
+      background: #353535;
+      border-left-color: #ffffff;
+      color: #ffffff;
+    }
+
+    img.content-mask {
+      background-color: currentColor;
     }
 
     .item-count-box {
-      font-family: 'Poppins', Arial, sans-serif;
-      font-size: 10px;
-      font-weight: 500;
-      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: @text-color-subtle;
+      background: transparent;
+      font-family: @font-family-sans-serif;
+      font-weight: 600;
+      border: 1px solid @white-20;
       box-shadow: none;
       border-radius: 0;
+    }
+
+    .item-count-box.alt-count {
+      background: #ffffff;
+      color: #000000;
+      border-color: #ffffff;
     }
 
     .item-action-button {
@@ -46,5 +66,31 @@
 }
 
 .account-switcher {
-  color: #fafafa;
+  color: @text-color;
+  opacity: 0.6;
+  transition: opacity 300ms ease-out;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.account-sidebar .disclosure-triangle div {
+  border-left-color: @white-40;
+}
+
+.sidebar-activity {
+  background: #131313;
+  color: @text-color-subtle;
+  border-top: 1px solid @white-10;
+  box-shadow: none;
+
+  .item .inner,
+  .item .sync-activity .account {
+    border-color: @white-10;
+  }
+
+  .folder-progress::before {
+    background-color: @color-success !important;
+  }
 }

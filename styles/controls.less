@@ -8,61 +8,57 @@ select,
 .menu,
 .modal,
 .popover,
-.tooltip {
+.fixed-popover,
+.date-picker-popover,
+.mail-label,
+.well {
   border-radius: 0;
-}
-
-button,
-input,
-textarea,
-select,
-.menu,
-.dropdown-menu,
-.modal,
-.popover {
-  font-family: 'Poppins', Arial, sans-serif;
 }
 
 .btn,
 .btn-toolbar {
-  background: #0a0a0a;
+  background: transparent;
   background-image: none;
-  color: #fafafa;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: @text-color;
+  border: 1px solid @white-20;
   box-shadow: none;
+  font-weight: 700;
+  letter-spacing: 0.12em;
   transition: background-color 300ms ease-out, color 300ms ease-out,
-    border-color 300ms ease-out;
+    border-color 300ms ease-out, opacity 300ms ease-out;
 
-  &:hover:not(.btn-disabled) {
-    background: #e5e5e5;
-    color: #0a0a0a;
-    border-color: #e5e5e5;
+  &:hover:not(.btn-disabled),
+  &:focus-visible:not(.btn-disabled) {
+    background: #ffffff;
+    color: #000000;
+    border-color: #ffffff;
 
     img.content-mask {
-      background-color: #0a0a0a;
+      background-color: #000000;
     }
   }
 
-  &:focus-visible {
-    outline: 2px solid #e5e5e5;
-    outline-offset: 2px;
+  &.btn-disabled,
+  &[disabled] {
+    opacity: 0.4;
   }
 
   &.btn-action,
   &.btn-emphasis {
-    background: #e5e5e5;
+    background: #ffffff;
     background-image: none;
-    color: #0a0a0a;
-    border: 1px solid #e5e5e5;
+    color: #000000;
+    border-color: #ffffff;
     box-shadow: none;
 
     img.content-mask {
-      background-color: #0a0a0a;
+      background-color: #000000;
     }
 
     &:hover:not(.btn-disabled) {
-      background: #e5e5e5;
-      border-color: #e5e5e5;
+      background: @white-90;
+      color: #000000;
+      border-color: @white-90;
     }
   }
 
@@ -72,37 +68,50 @@ select,
 
   &.btn-danger,
   &.btn-destructive {
-    background: #ff6467;
-    border-color: #ff6467;
-    color: #0a0a0a;
+    background: @color-danger;
+    border-color: @color-danger;
+    color: #000000;
   }
 }
 
 input:not([type='checkbox']):not([type='radio']),
 textarea,
-select {
-  background-color: #262626;
-  border-color: rgba(255, 255, 255, 0.2);
-  color: #fafafa;
+select,
+[contenteditable].input {
+  background-color: @input-bg;
+  border: 1px solid @input-border-color;
+  border-radius: 0;
+  color: @text-color;
   box-shadow: none;
+  transition: border-color 300ms ease-out, background-color 300ms ease-out;
 
   &:focus,
   &:focus-visible {
-    border-color: rgba(255, 255, 255, 0.6);
+    border-color: @white-40;
     box-shadow: none;
+    outline: none;
   }
 
   &::placeholder {
-    color: #777777;
+    color: #474747;
   }
 }
 
 input[type='checkbox'],
 input[type='radio'] {
-  accent-color: #e5e5e5;
+  accent-color: #ffffff;
 }
 
-// Composer header fields are transparent lines rather than boxed form inputs.
+.switch {
+  border-radius: 0;
+  background: #353535;
+
+  &.on,
+  &.active {
+    background: #ffffff;
+  }
+}
+
 .composer-inner-wrap input:not([type='checkbox']):not([type='radio']),
 .composer-inner-wrap textarea {
   background: transparent;
@@ -110,51 +119,103 @@ input[type='radio'] {
 }
 
 .menu,
-.dropdown-menu {
-  background: #262626;
-  border-color: rgba(255, 255, 255, 0.1);
+.dropdown-menu,
+.fixed-popover,
+.date-picker-popover,
+.modal,
+.popover {
+  background: #1b1b1b;
+  color: @text-color;
+  border: 1px solid @white-10;
   box-shadow: none;
 
   .header-container,
   .content-container {
-    background: #262626;
+    background: #1b1b1b;
+    border-color: @white-10;
   }
 
   .item.selected,
   .item:active {
-    background: #404040;
-    color: #fafafa;
+    background: #ffffff;
+    color: #000000;
   }
 
   .item:not(.active):not(.selected):hover {
-    background: #404040;
-    color: #e5e5e5;
+    background: #353535;
+    color: #ffffff;
   }
 
-  .item.divider {
-    color: rgba(255, 255, 255, 0.4);
-    font-family: 'Poppins', Arial, sans-serif;
-    font-size: 10px;
+  .item.divider,
+  .menu-label,
+  header {
+    color: @white-40;
+    font-weight: 700;
     letter-spacing: 0.2em;
   }
 }
 
-// Popovers, dialogs and chips use the same flat surface treatment.
-.fixed-popover,
-.date-picker-popover,
-.modal,
-.mail-label {
+.modal-container,
+.modal-backdrop {
+  background: rgba(5, 5, 5, 0.9);
+}
+
+.modal {
+  padding: 24px;
+}
+
+.modal h1,
+.modal h2,
+.modal h3,
+.modal .modal-title {
+  color: #ffffff;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.mail-label,
+.tokenizing-field .token {
+  background: transparent !important;
+  border: 1px solid @white-20;
+  color: @text-color-subtle !important;
+  box-shadow: none !important;
+  filter: grayscale(1);
+  font-family: @font-family-sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.search-bar,
+.thread-search-bar,
+.event-search-bar {
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid @white-20;
   border-radius: 0;
   box-shadow: none;
+
+  &.focused,
+  &:focus-within {
+    border-bottom-color: #ffffff;
+    box-shadow: none;
+  }
+
+  input {
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+  }
 }
 
-.fixed-popover,
-.date-picker-popover,
-.modal {
-  background-color: #262626;
-  border-color: rgba(255, 255, 255, 0.1);
-}
+.empty-state,
+.empty-list-state {
+  color: @text-color-subtle;
 
-*:focus-visible {
-  outline-color: #e5e5e5;
+  h1,
+  h2,
+  h3 {
+    color: #ffffff;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+  }
 }

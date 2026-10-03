@@ -1,0 +1,303 @@
+.contacts-perspective-list,
+.contact-detail-column,
+.contacts-empty-state {
+  background: @background-primary;
+  color: @text-color;
+}
+
+.contacts-perspective-list {
+  border-right: 1px solid @white-10;
+}
+
+.contact-detail-column {
+  .contact-detail-content-wrap {
+    padding: 32px;
+  }
+
+  .contact-hero h3 {
+    color: #ffffff;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+  }
+
+  .contact-group-memberships .group-membership {
+    background: transparent;
+    border: 1px solid @white-20;
+    border-radius: 0;
+    color: @text-color-subtle;
+    transition: background-color 300ms ease-out, color 300ms ease-out;
+
+    &:hover {
+      background: #ffffff;
+      border-color: #ffffff;
+      color: #000000;
+    }
+  }
+
+  .contact-origin,
+  .contact-attribute span[aria-hidden='true'],
+  label {
+    color: @white-40;
+  }
+
+  .contact-attributes .contact-attributes-section,
+  .contact-edit-footer {
+    border-color: @white-10;
+  }
+
+  .contact-attribute a {
+    color: @text-color;
+  }
+}
+
+.contact-search {
+  border-bottom: 1px solid @white-10;
+}
+
+.mailspring-calendar {
+  background: @background-primary;
+  color: @text-color;
+
+  .calendar-source-list {
+    background: #1b1b1b;
+    border-color: @white-10;
+    color: @text-color-subtle;
+
+    .account-label {
+      color: @white-40;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+    }
+
+    .colored-checkbox,
+    .colored-checkbox .bg-color {
+      border-radius: 0;
+      box-shadow: none;
+    }
+  }
+
+  .header-controls {
+    background: #131313;
+    color: @text-color-subtle;
+    border-color: @white-10;
+    box-shadow: none;
+
+    .title {
+      color: #ffffff;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .view-controls {
+      border: 1px solid @white-20;
+      border-radius: 0;
+      box-shadow: none;
+
+      .view-btn,
+      .cur-view-btn {
+        background: transparent;
+        color: @text-color;
+        border-right: 1px solid @white-10;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        transition: background-color 300ms ease-out, color 300ms ease-out;
+      }
+
+      .view-btn:hover,
+      .cur-view-btn {
+        background: #ffffff;
+        color: #000000;
+      }
+    }
+  }
+
+  .calendar-view,
+  .event-grid-wrap,
+  .event-grid-legend,
+  .month-view-grid-container,
+  .agenda-scroll-region,
+  .calendar-empty-state {
+    background: @background-primary;
+    box-shadow: none;
+  }
+
+  .week-view {
+    .week-header,
+    .date-label-legend,
+    .day-label-wrap,
+    .event-column,
+    .event-grid-legend-wrap {
+      border-color: @white-10;
+      box-shadow: inset 1px 0 0 @white-10;
+    }
+
+    .event-grid-bg-wrap {
+      --grid-line-minor: rgba(255, 255, 255, 0.05);
+      --grid-line-major: rgba(255, 255, 255, 0.1);
+
+      .cursor {
+        background: @white-05;
+      }
+    }
+
+    .event-column.weekend {
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .legend-text,
+    .date-label,
+    .weekday-label {
+      color: @white-40;
+      font-family: @font-family-sans-serif;
+    }
+
+    .day-label-wrap.is-today .date-label,
+    .day-label-wrap.is-today .weekday-label {
+      color: #ffffff;
+    }
+  }
+
+  .month-view {
+    .month-view-weekday-headers {
+      background: #0d0d0d;
+      border-color: @white-10;
+    }
+
+    .month-view-weekday-header,
+    .month-view-week,
+    .month-view-day-cell {
+      border-color: @white-10;
+      box-shadow: inset 1px 0 0 @white-10;
+    }
+
+    .month-view-weekday-header,
+    .month-view-day-number {
+      color: @white-60;
+      font-family: @font-family-sans-serif;
+      font-weight: 600;
+    }
+
+    .month-view-day-cell.is-other-month {
+      background: #0d0d0d;
+
+      .month-view-day-number {
+        color: @white-30;
+      }
+    }
+
+    .month-view-day-number:hover {
+      background: @white-10;
+    }
+
+    .month-view-day-cell.is-today .month-view-day-number.is-today {
+      background: #ffffff;
+      color: #000000;
+    }
+
+    .month-view-event {
+      border: 1px solid @white-20;
+      border-radius: 0;
+      filter: grayscale(1);
+      transition: border-color 300ms ease-out, transform 300ms ease-out;
+
+      &::before {
+        border-radius: 0;
+      }
+
+      &:hover {
+        border-color: #ffffff;
+        box-shadow: none;
+        transform: translateY(-1px);
+      }
+
+      &.selected {
+        background: #ffffff !important;
+
+        .month-view-event-title {
+          color: #000000;
+        }
+      }
+    }
+  }
+
+  .calendar-event {
+    border: 1px solid @white-20;
+    border-radius: 0;
+    filter: grayscale(1);
+    transition: border-color 300ms ease-out, transform 300ms ease-out;
+
+    &::before,
+    .exception-tag {
+      border-radius: 0;
+    }
+
+    &.draggable:hover {
+      border-color: #ffffff;
+      box-shadow: none;
+      transform: translateY(-1px);
+    }
+
+    &.selected {
+      background: #ffffff !important;
+
+      .default-header,
+      .event-details,
+      .recurring-icon {
+        color: #000000;
+      }
+    }
+  }
+
+  .agenda-day-header {
+    background: @background-primary;
+    border-color: @white-10;
+
+    .agenda-day-name,
+    .agenda-day-date,
+    .agenda-today-badge {
+      color: @text-color;
+    }
+  }
+
+  .agenda-event {
+    border-radius: 0;
+    border-left: 2px solid transparent;
+    transition: background-color 300ms ease-out, border-color 300ms ease-out;
+
+    &:hover {
+      background: #181818;
+      border-left-color: @white-50;
+    }
+
+    &.selected {
+      background: #353535;
+      border-left-color: #ffffff;
+    }
+  }
+
+  .current-time-indicator {
+    height: 2px;
+    border-color: @color-danger;
+
+    div {
+      background: @color-danger;
+      border-color: @background-primary;
+    }
+  }
+}
+
+.event-wrapper {
+  background: @white-05;
+  border: 1px solid @white-10;
+  border-radius: 0;
+
+  .event-header,
+  .event-download {
+    border-color: @white-10;
+    border-radius: 0;
+  }
+
+  .event-body .event-date .event-day {
+    color: @color-danger;
+  }
+}
