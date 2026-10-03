@@ -46,6 +46,14 @@ mailspring-workspace {
   background: @background-primary;
 }
 
+// Keep every native application UI element at 12px and render its text lowercase.
+// Received email content is isolated in its own frame and keeps its original styling.
+body,
+body * {
+  font-size: 12px !important;
+  text-transform: lowercase !important;
+}
+
 body.platform-win32,
 body.platform-win32 mailspring-workspace,
 body.platform-win32 input,
@@ -57,6 +65,7 @@ mailspring-workspace {
   --font-weight-semi-bold: 600;
   --system-accent: #e5e5e5;
   --system-accent-dark: #e5e5e5;
+  --account-sidebar-max-width: 360px;
 }
 
 .sheet-toolbar-container,

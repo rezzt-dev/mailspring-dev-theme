@@ -1,0 +1,10 @@
+{
+  "name": "short-account-labels",
+  "main": "./main.js",
+  "version": "1.0.0",
+  "description": "Show only the part before @ in account labels in the Mailspring sidebar.",
+  "engines": {
+    "mailspring": ">=1.6.3"
+  },
+  "license": "MIT"
+}
