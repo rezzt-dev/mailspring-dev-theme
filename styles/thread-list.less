@@ -1,10 +1,8 @@
 .column-ThreadList,
 .column-DraftList,
-.toolbar-ThreadList,
-.toolbar-DraftList,
 .thread-list,
 .draft-list {
-  background: #0b0b0b;
+  background: @surface-canvas;
 }
 
 .thread-list,
@@ -15,7 +13,7 @@
   .list-item,
   .list-tabular-item {
     position: relative;
-    background: #0b0b0b;
+    background: @surface-canvas;
     color: @text-color-subtle;
     border-bottom: 1px solid @white-10 !important;
     transition: background-color 300ms ease-out, color 300ms ease-out,
@@ -32,21 +30,21 @@
       transition: background-color 300ms ease-out;
     }
 
-    &:hover:not(.selected):not(.focused) {
-      background: #141414 !important;
+    &:hover:not(.selected):not(.focused):not(.keyboard-cursor) {
+      background: @surface-hover !important;
 
       &::before {
         background: @white-50;
       }
     }
 
-    &.unread:not(.selected):not(.focused) {
-      background: #101010;
+    &.unread:not(.selected):not(.focused):not(.keyboard-cursor) {
+      background: @surface-panel;
       color: #ffffff;
     }
 
     &.selected:not(.focused) {
-      background: #1a1a1a;
+      background: @surface-selected;
       color: #ffffff;
 
       &::before {
@@ -57,7 +55,7 @@
     &.focused,
     &.selected.focused,
     &.keyboard-cursor {
-      background: #242424 !important;
+      background: @surface-focused !important;
       color: #ffffff;
 
       &::before {
@@ -80,8 +78,8 @@
 
     .snippet,
     .timestamp {
-      color: inherit;
-      opacity: 0.6;
+      color: @text-color-muted;
+      opacity: 1;
     }
 
     .timestamp,
@@ -109,22 +107,22 @@
 }
 
 .thread-list .list-item:hover .list-column-HoverActions .inner {
-  background-image: linear-gradient(to right, transparent, #141414 50%);
+  background-image: linear-gradient(to right, transparent, @surface-hover 50%);
 }
 
 .thread-list .list-item.selected:hover .list-column-HoverActions .inner {
-  background-image: linear-gradient(to right, transparent, #1a1a1a 50%);
+  background-image: linear-gradient(to right, transparent, @surface-selected 50%);
 }
 
 .thread-list .list-item.focused:hover .list-column-HoverActions .inner,
-.thread-list.handler-split .list-item.selected:hover .list-column-HoverActions .inner {
-  background-image: linear-gradient(to right, transparent, #242424 50%);
+.thread-list .list-item.keyboard-cursor:hover .list-column-HoverActions .inner {
+  background-image: linear-gradient(to right, transparent, @surface-focused 50%);
 }
 
 .thread-list-empty-folder-bar,
 .found-in-mail-enabled-bar {
   color: @text-color-subtle;
-  background: #101010;
+  background: @surface-panel;
   border-color: @white-10;
 }
 
@@ -139,4 +137,16 @@
 
 .swipe-backing.swipe-snooze {
   background: #474747 !important;
+}
+
+// The built-in reminder plugin otherwise supplies a lavender row background.
+.thread-list .list-item.thread-list-reminder-item {
+  &:not(.selected):not(.focused):not(.keyboard-cursor),
+  &.unread:not(.selected):not(.focused):not(.keyboard-cursor) {
+    background: @surface-panel;
+  }
+
+  &.selected:not(.focused):not(.keyboard-cursor) {
+    background: @surface-selected;
+  }
 }

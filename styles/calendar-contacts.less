@@ -37,7 +37,7 @@
   .contact-origin,
   .contact-attribute span[aria-hidden='true'],
   label {
-    color: @white-40;
+    color: @text-color-muted;
   }
 
   .contact-attributes .contact-attributes-section,
@@ -59,12 +59,12 @@
   color: @text-color;
 
   .calendar-source-list {
-    background: #111111;
+    background: @surface-panel;
     border-color: @white-10;
     color: @text-color-subtle;
 
     .account-label {
-      color: @white-40;
+      color: @text-color-muted;
       font-weight: 700;
       letter-spacing: 0.14em;
     }
@@ -77,7 +77,7 @@
   }
 
   .header-controls {
-    background: #0b0b0b;
+    background: @surface-panel;
     color: @text-color-subtle;
     border-color: @white-10;
     box-shadow: none;
@@ -147,7 +147,7 @@
     .legend-text,
     .date-label,
     .weekday-label {
-      color: @white-40;
+      color: @text-color-muted;
       font-family: @font-family-sans-serif;
     }
 
@@ -265,12 +265,12 @@
     transition: background-color 300ms ease-out, border-color 300ms ease-out;
 
     &:hover {
-      background: #141414;
-      border-left-color: @white-50;
+      background: @surface-hover;
+      border-left-color: @text-color-muted;
     }
 
     &.selected {
-      background: #242424;
+      background: @surface-focused;
       border-left-color: #ffffff;
     }
   }

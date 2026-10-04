@@ -13,6 +13,9 @@
 - añadir un complemento de mailspring para mostrar solo el texto anterior a `@` en las etiquetas de cuenta del panel lateral sin cambiar los nombres originales
 
 #### CAMBIOS
+- unificar la toolbar y su barra de seleccion en `#101010`, eliminar los cortes entre columnas y aplicar la inversion completa de texto e iconos en sus controles
+- centralizar los roles de superficie y estado en `styles/ui-variables.less`, mejorar el contraste de metadatos y normalizar recordatorios, notas y errores en toda la interfaz
+- actualizar `readme.md` con la asignacion de tonos para lienzo, paneles, popovers, campos y estados interactivos
 - rehacer las superficies, controles, navegacion, listas, mensajes, compositor, preferencias, contactos, calendario y notificaciones con el sistema editorial monocromo de `rezzt.dev`
 - fijar toda la interfaz nativa en `gilroy`, 12px y minusculas y ampliar hasta 360px el ancho maximo del panel lateral sin alterar el formato de los correos recibidos ni redactados
 - actualizar los metadatos del paquete a `rezzt.dev editorial dark` en la version `1.1.0` para identificar el nuevo sistema visual en mailspring
@@ -31,6 +34,9 @@
 - add a mailspring plugin to show only the text before `@` in sidebar account labels without changing the original account names
 
 #### CHANGED
+- unify the toolbar and selection overlay on `#101010`, remove column color breaks, and apply complete text and icon inversion to toolbar controls
+- centralize surface and state roles in `styles/ui-variables.less`, improve metadata contrast, and normalize reminders, notes, and errors throughout the interface
+- update `readme.md` with the color assignment for canvas, panels, popovers, fields, and interactive states
 - rebuild surfaces, controls, navigation, lists, messages, composer, preferences, contacts, calendar and notifications with the monochrome `rezzt.dev` editorial system
 - set the entire native interface to `gilroy`, 12px and lowercase and raise the sidebar maximum width to 360px without changing received or authored email formatting
 - update the package metadata to `rezzt.dev editorial dark` at version `1.1.0` to identify the new visual system in mailspring

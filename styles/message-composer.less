@@ -1,7 +1,5 @@
 .column-MessageList,
-.toolbar-MessageList,
 .column-MessageListSidebar,
-.toolbar-MessageListSidebar,
 #message-list {
   background: @background-primary;
 }
@@ -36,7 +34,7 @@
   .message-body-error,
   .minified-bundle .msg-line,
   .minified-bundle .num-messages {
-    background: @background-primary;
+    background: @surface-panel;
     border: 1px solid @white-10;
     border-radius: 0;
     box-shadow: none;
@@ -54,7 +52,7 @@
   .message-header .header-row .header-label,
   .message-header .message-time,
   .message-participants .participant-type {
-    color: @white-40;
+    color: @text-color-muted;
     font-family: @font-family-sans-serif;
     font-weight: 700;
     letter-spacing: 0.12em;
@@ -75,7 +73,7 @@
     transition: border-color 300ms ease-out;
 
     &:hover {
-      border-color: @white-40;
+      border-color: @text-color-muted;
     }
   }
 
@@ -103,14 +101,14 @@
   }
 
   .composer-action-bar-wrap {
-    background: #0b0b0b;
+    background: @surface-panel;
     border-top: 1px solid @white-10;
     border-radius: 0;
     box-shadow: none;
   }
 
   .composer-field-label {
-    color: @white-40;
+    color: @text-color-muted;
     font-family: @font-family-sans-serif;
     font-weight: 700;
     letter-spacing: 0.16em;
@@ -138,7 +136,7 @@
 
 .RichEditor-toolbar,
 .RichEditor-toolbar .inner {
-  background: #0b0b0b;
+  background: @surface-panel;
   border-color: @white-10;
   border-radius: 0;
   box-shadow: none;
@@ -146,7 +144,7 @@
 
 .emoji-picker,
 .emoji-button-popover {
-  background: #111111;
+  background: @surface-popover;
   border: 1px solid @white-10;
   border-radius: 0;
   box-shadow: none;

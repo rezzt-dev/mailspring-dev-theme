@@ -10,15 +10,26 @@
 @gray-light: #c6c6c6;
 @gray-lighter: #f5f5f5;
 
+// Surface roles shared by every native view. Keep toolbar columns transparent.
+@surface-canvas: #080808;
+@surface-panel: #101010;
+@surface-popover: #111111;
+@surface-field: #0d0d0d;
+@surface-hover: #141414;
+@surface-selected: #1a1a1a;
+@surface-focused: #242424;
+@text-color-muted: #999999;
+@text-color-disabled: @white-40;
+
 @accent-primary: #ffffff;
 @accent-primary-dark: #ffffff;
 @component-active-color: #ffffff;
-@component-active-bg: #1a1a1a;
+@component-active-bg: @surface-selected;
 
-@background-primary: #080808;
+@background-primary: @surface-canvas;
 @background-off-primary: #050505;
-@background-secondary: #101010;
-@background-tertiary: #242424;
+@background-secondary: @surface-panel;
+@background-tertiary: @surface-focused;
 @background-gradient: none;
 
 @white-05: rgba(255, 255, 255, 0.05);
@@ -39,7 +50,7 @@
 
 @text-color: #f5f5f5;
 @text-color-subtle: #c6c6c6;
-@text-color-very-subtle: rgba(255, 255, 255, 0.4);
+@text-color-very-subtle: @text-color-muted;
 @text-color-inverse: #000000;
 @text-color-inverse-subtle: rgba(0, 0, 0, 0.8);
 @text-color-inverse-very-subtle: rgba(0, 0, 0, 0.55);
@@ -84,36 +95,36 @@
 @btn-danger-bg-color: #f87171;
 @btn-danger-text-color: #000000;
 
-@dropdown-default-bg-color: #111111;
+@dropdown-default-bg-color: @surface-popover;
 @dropdown-default-text-color: #f5f5f5;
 @dropdown-default-border-color: rgba(255, 255, 255, 0.1);
-@input-bg: #0d0d0d;
-@input-bg-disabled: #101010;
+@input-bg: @surface-field;
+@input-bg-disabled: @surface-panel;
 @input-border-color: rgba(71, 71, 71, 0.55);
 @input-border-color-blurred: rgba(255, 255, 255, 0.1);
 
-@toolbar-background-color: #0b0b0b;
-@panel-background-color: #111111;
-@source-list-bg: #111111;
-@source-list-active-bg: #242424;
+@toolbar-background-color: @surface-panel;
+@panel-background-color: @surface-panel;
+@source-list-bg: @surface-panel;
+@source-list-active-bg: @surface-focused;
 @source-list-active-color: #ffffff;
 
-@list-bg: #0b0b0b;
+@list-bg: @surface-canvas;
 @list-border: rgba(255, 255, 255, 0.1);
-@list-hover-bg: #141414;
-@list-focused-bg: #242424;
+@list-hover-bg: @surface-hover;
+@list-focused-bg: @surface-focused;
 @list-focused-color: #ffffff;
 @list-focused-border: rgba(255, 255, 255, 0.1);
-@list-selected-bg: #1a1a1a;
+@list-selected-bg: @surface-selected;
 @list-selected-color: #ffffff;
 @list-selected-border: rgba(255, 255, 255, 0.1);
 
-@background-color-info: #111111;
+@background-color-info: @surface-panel;
 @background-color-success: #102a19;
 @background-color-warning: #331818;
 @background-color-error: #331818;
-@background-color-pending: #111111;
-@menu-item-color-hover: #242424;
+@background-color-pending: @surface-panel;
+@menu-item-color-hover: @surface-focused;
 @menu-item-color-selected: #ffffff;
 @menu-text-color-selected: #000000;
 @open-tracking-color: #c6c6c6;

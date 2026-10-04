@@ -1,10 +1,10 @@
 .notifications {
-  background: #111111;
+  background: @surface-panel;
   box-shadow: none;
 }
 
 .notification {
-  background: #111111;
+  background: @surface-panel;
   color: @text-color;
   border: 1px solid @white-10;
   border-left: 2px solid #ffffff;
@@ -13,7 +13,7 @@
 
   &.error,
   &.offline {
-    background: #111111;
+    background: @surface-panel;
     border-left-color: @color-danger;
   }
 
@@ -51,7 +51,7 @@
   .notification-upgrade,
   .notification-error,
   .notification-offline {
-    background: #111111;
+    background: @surface-panel;
     color: @text-color;
     border-bottom: 1px solid @white-10;
     border-left: 2px solid #ffffff;
@@ -75,4 +75,21 @@
       border-radius: 0;
     }
   }
+}
+
+// Informational notes and reminders share neutral surfaces; red is for errors.
+.send-reminders-header {
+  background: @surface-panel;
+  color: @text-color-subtle;
+  border-color: @border-color-divider;
+
+  img {
+    background-color: currentColor;
+  }
+}
+
+#message-list .message-body-error {
+  background: @background-color-error;
+  color: @text-color;
+  border-left: 2px solid @color-danger;
 }

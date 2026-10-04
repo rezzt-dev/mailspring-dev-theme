@@ -15,6 +15,10 @@ a professional dark theme for mailspring based on the rezzt.dev editorial visual
 - use gilroy at 12px across the native application interface.
 - present every native interface label in lowercase.
 - use `#080808` for the main canvas, `#101010`/`#111111` for surfaces and `#0d0d0d` for fields.
+- keep the entire toolbar on `#101010`, with transparent column sections and matching selection overlays.
+- assign `#080808` to the reading canvas and message list, `#101010` to navigation/cards/notes, and `#111111` to menus and popovers.
+- use `#141414` for hover, `#1a1a1a` for selection, `#242424` plus a white marker for focus, and `#999999` for readable metadata/placeholders.
+- reserve red for errors/danger and green for active status; informational notes and reminders stay neutral.
 - use white-alpha separators, square corners and monochrome inversion for interactive states.
 
 received html emails and authored message content retain their original formatting and capitalisation. native window elements follow the operating system theme.

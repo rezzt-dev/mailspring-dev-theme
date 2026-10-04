@@ -1,7 +1,6 @@
 .column-RootSidebar,
-.account-sidebar,
-.toolbar-RootSidebar {
-  background: #111111;
+.account-sidebar {
+  background: @surface-panel;
 }
 
 .account-sidebar {
@@ -11,7 +10,7 @@
 
 .account-sidebar .outline-view {
   .heading {
-    color: @white-40;
+    color: @text-color-muted;
     font-family: @font-family-sans-serif;
     font-weight: 700;
     letter-spacing: 0.25em;
@@ -29,12 +28,12 @@
       border-color 300ms ease-out;
 
     &:hover {
-      background: #1a1a1a;
+      background: @surface-hover;
       color: #ffffff;
     }
 
     &.selected {
-      background: #242424;
+      background: @surface-focused;
       border-left-color: #ffffff;
       color: #ffffff;
     }
@@ -76,11 +75,11 @@
 }
 
 .account-sidebar .disclosure-triangle div {
-  border-left-color: @white-40;
+  border-left-color: @text-color-muted;
 }
 
 .sidebar-activity {
-  background: #0b0b0b;
+  background: @surface-panel;
   color: @text-color-subtle;
   border-top: 1px solid @white-10;
   box-shadow: none;

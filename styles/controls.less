@@ -27,8 +27,8 @@ select,
   transition: background-color 300ms ease-out, color 300ms ease-out,
     border-color 300ms ease-out, opacity 300ms ease-out;
 
-  &:hover:not(.btn-disabled),
-  &:focus-visible:not(.btn-disabled) {
+  &:hover:not(.btn-disabled):not([disabled]),
+  &:focus-visible:not(.btn-disabled):not([disabled]) {
     background: #ffffff;
     color: #000000;
     border-color: #ffffff;
@@ -55,7 +55,7 @@ select,
       background-color: #000000;
     }
 
-    &:hover:not(.btn-disabled) {
+    &:hover:not(.btn-disabled):not([disabled]) {
       background: @white-90;
       color: #000000;
       border-color: @white-90;
@@ -87,13 +87,13 @@ select,
 
   &:focus,
   &:focus-visible {
-    border-color: @white-40;
+    border-color: @text-color-muted;
     box-shadow: none;
     outline: none;
   }
 
   &::placeholder {
-    color: #474747;
+    color: @text-color-muted;
   }
 }
 
@@ -104,7 +104,7 @@ input[type='radio'] {
 
 .switch {
   border-radius: 0;
-  background: #242424;
+  background: @surface-focused;
 
   &.on,
   &.active {
@@ -124,14 +124,14 @@ input[type='radio'] {
 .date-picker-popover,
 .modal,
 .popover {
-  background: #111111;
+  background: @surface-popover;
   color: @text-color;
   border: 1px solid @white-10;
   box-shadow: none;
 
   .header-container,
   .content-container {
-    background: #111111;
+    background: @surface-popover;
     border-color: @white-10;
   }
 
@@ -142,14 +142,14 @@ input[type='radio'] {
   }
 
   .item:not(.active):not(.selected):hover {
-    background: #242424;
+    background: @surface-focused;
     color: #ffffff;
   }
 
   .item.divider,
   .menu-label,
   header {
-    color: @white-40;
+    color: @text-color-muted;
     font-weight: 700;
     letter-spacing: 0.2em;
   }

@@ -85,7 +85,9 @@ body.platform-win32.is-blurred .sheet-toolbar-container {
 }
 
 .sheet-toolbar {
+  height: 42px;
   min-height: 42px;
+  max-height: 42px;
   background: transparent;
   background-image: none;
   border: 0;
@@ -101,12 +103,14 @@ body.platform-win32.is-blurred .sheet-toolbar-container {
 .toolbar-Center {
   height: 100%;
   background: transparent;
-  border-color: @border-color-divider;
+  background-image: none;
+  border: 0;
+  box-shadow: none;
 }
 
 .sheet-toolbar .window-title,
 .toolbar-Preferences .window-title {
-  color: @white-40;
+  color: @text-color-muted;
   font-family: @font-family-sans-serif;
   font-size: 12px;
   font-weight: 700;
@@ -121,10 +125,11 @@ body.platform-win32.is-blurred .sheet-toolbar-container {
   box-shadow: none;
 }
 
-.toolbar-menu-control .btn-toolbar:hover,
-.sheet-toolbar .btn-toolbar:hover {
-  background: @white-05;
-  color: #ffffff;
+// Selection overlays must use the same solid surface as the entire toolbar.
+.sheet-toolbar .selection-bar .absolute {
+  background: @toolbar-background-color;
+  border: 0;
+  height: 100%;
 }
 
 .sheet-toolbar .btn,
@@ -134,15 +139,25 @@ body.platform-win32.is-blurred .sheet-toolbar-container {
   background-image: none;
 }
 
-.sheet-toolbar img.content-mask,
-.btn-icon img.content-mask {
-  background-color: @white-60;
-  transition: background-color 300ms ease-out;
+.sheet-toolbar .btn-toolbar {
+  color: @text-color-subtle;
+
+  &:hover:not(.btn-disabled):not([disabled]),
+  &:focus-visible:not(.btn-disabled):not([disabled]) {
+    background: @white;
+    color: @black;
+    border-color: @white;
+
+    img.content-mask {
+      background-color: @black;
+    }
+  }
 }
 
-.sheet-toolbar button:hover img.content-mask,
-.btn-icon:hover img.content-mask {
-  background-color: #ffffff;
+.sheet-toolbar img.content-mask,
+.btn-icon img.content-mask {
+  background-color: currentColor;
+  transition: background-color 300ms ease-out;
 }
 
 .toolbar-window-controls button {
