@@ -28,11 +28,15 @@
 - oscurecer la paleta monocroma con el lienzo `#080808`, superficies `#101010` y `#111111`, y estados interactivos `#242424` para reforzar la profundidad visual del tema
 - actualizar `readme.md` con los nuevos colores base del sistema visual
 - evolucionar `short-account-labels` a `account-identities` y restaurar el texto original al desactivar el complemento
+- aplicar los alias de `account-identities` al menu de seleccion del remitente, conservar la direccion completa en el titulo y restaurar el contenido original al desactivar el complemento
+- configurar las ocho cuentas importadas en `plugins/account-identities/identities.json` con alias, iniciales, indicadores y contexto editables
+- añadir una prueba del menu de remitente en `plugins/account-identities/test/main.test.js`
 - destacar los indicadores nativos de adjuntos y recordatorios de seguimiento con marcadores monocromos en `styles/thread-list.less`
 - integrar filtros de productividad para `requiere respuesta`, `importante`, `sin revisar` y `pendientes` con acciones rapidas desde la lista y la vista del mensaje
 - separar los recordatorios por `accountId` y `threadId`, conservarlos en la configuracion local y comprobar la cuenta antes de abrir el correo original
 - añadir pruebas para la deteccion de respuestas, la resolucion automatica y el aislamiento de recordatorios entre cuentas en `plugins/focus-and-follow-up/test/focus-store.test.js`
 - documentar la instalacion, el uso, las limitaciones y el tratamiento local de datos de los nuevos complementos
+- actualizar la documentacion de `plugins/account-identities/README.md` con el funcionamiento del menu de remitente y el formato JSON de configuracion
 
 #### SEGURIDAD
 - bloquear la carga automatica de imagenes mediante la preferencia nativa de `mailspring` y mostrar la url real y la url limpia antes de abrir enlaces con parametros conocidos de seguimiento
@@ -61,11 +65,15 @@
 - darken the monochrome palette with the `#080808` canvas, `#101010` and `#111111` surfaces, and `#242424` interactive states to reinforce the theme's visual depth
 - update `readme.md` with the visual system's new base colors
 - evolve `short-account-labels` into `account-identities` and restore the original label when the plugin is deactivated
+- apply `account-identities` aliases to the sender selection menu, preserve the full address in the title, and restore the original content when the plugin is deactivated
+- configure the eight imported accounts in `plugins/account-identities/identities.json` with editable aliases, initials, indicators, and context
+- add a sender menu test in `plugins/account-identities/test/main.test.js`
 - emphasize native attachment and follow-up reminder indicators with monochrome markers in `styles/thread-list.less`
 - add productivity filters for `requires reply`, `important`, `unreviewed` and `pending` with quick actions from the thread list and message view
 - scope reminders by `accountId` and `threadId`, persist them in local configuration, and verify the account before opening the original email
 - add tests for reply detection, automatic resolution, and cross-account reminder isolation in `plugins/focus-and-follow-up/test/focus-store.test.js`
 - document installation, usage, limitations, and local data handling for the new plugins
+- update `plugins/account-identities/README.md` with sender menu behavior and the JSON configuration format
 
 #### SECURITY
 - block automatic image loading through Mailspring's native preference and show the real and cleaned URLs before opening links with known tracking parameters

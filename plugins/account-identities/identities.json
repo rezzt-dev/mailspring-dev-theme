@@ -1,1 +1,50 @@
-{}
+{
+  "juangarciacazallas.dev@gmail.com": {
+    "alias": "personal",
+    "initial": "j",
+    "indicator": "white",
+    "context": "dev"
+  },
+  "contacto@rezzt.dev": {
+    "alias": "contacto",
+    "initial": "c",
+    "indicator": "white",
+    "context": "contacto"
+  },
+  "privacy@rezzt.dev": {
+    "alias": "privacy",
+    "initial": "p",
+    "indicator": "gray",
+    "context": ""
+  },
+  "modz@rezzt.dev": {
+    "alias": "modz",
+    "initial": "m",
+    "indicator": "gray",
+    "context": ""
+  },
+  "juangc.correo@gmail.com": {
+    "alias": "j.correo",
+    "initial": "c",
+    "indicator": "gray",
+    "context": ""
+  },
+  "rezzt.dev@gmail.com": {
+    "alias": "rezzt.dev",
+    "initial": "r",
+    "indicator": "gray",
+    "context": ""
+  },
+  "rezzt.devv@gmail.com": {
+    "alias": "rezzt.devv",
+    "initial": "r",
+    "indicator": "gray",
+    "context": ""
+  },
+  "rezt.off@gmail.com": {
+    "alias": "rezt.off",
+    "initial": "r",
+    "indicator": "gray",
+    "context": ""
+  }
+}

@@ -4,8 +4,10 @@ const configuredIdentities = require('./identities.json');
 
 const SIDEBAR_SELECTOR = '.account-sidebar';
 const HEADING_SELECTOR = '.account-sidebar-sections .outline-view .heading';
+const FROM_MENU_SELECTOR = '.composer-participant-field.from-field .menu .content-container > .item .contact';
 const originalLabels = new WeakMap();
 const originalTitles = new WeakMap();
+const originalMenuLabels = new WeakMap();
 let sidebarObserver = null;
 let documentObserver = null;
 let unsubscribeAccounts = null;
@@ -30,13 +32,8 @@ function identityFor(email) {
 }
 
 function headingTextNodes(heading) {
-  const walker = heading.ownerDocument.createTreeWalker(heading, 4);
-  const nodes = [];
-  let node;
-  while ((node = walker.nextNode())) {
-    if (!node.parentElement.closest('.rezzt-account-identity')) nodes.push(node);
-  }
-  return nodes;
+  const label = heading.querySelector(':scope > .text');
+  return label ? Array.from(label.childNodes).filter((node) => node.nodeType === 3) : [];
 }
 
 function restoreHeading(heading) {
@@ -109,12 +106,55 @@ function updateHeadings() {
   });
 }
 
+function updateFromMenu() {
+  if (!AccountStore.aliasesFor) return;
+  const accounts = AccountStore.accounts();
+  const contacts = AccountStore.aliasesFor(accounts);
+  document.querySelectorAll(FROM_MENU_SELECTOR).forEach((row) => {
+    const saved = originalMenuLabels.get(row);
+    const current = row.textContent || '';
+    const original = saved && current === saved.visible ? saved.original : current;
+    const contact = contacts.find((item) => item.toString() === original);
+    if (!contact || !contact.email) {
+      restoreMenuRow(row);
+      return;
+    }
+    const identity = identityFor(contact.email);
+    const visible = identity.context ? `${identity.alias} · ${identity.context}` : identity.alias;
+    if (!saved || current !== saved.visible) {
+      originalMenuLabels.set(row, {
+        original,
+        visible,
+        title: saved ? saved.title : row.getAttribute('title'),
+        ariaLabel: saved ? saved.ariaLabel : row.getAttribute('aria-label'),
+      });
+    } else if (saved.visible !== visible) {
+      originalMenuLabels.set(row, { ...saved, visible });
+    }
+    if (current !== visible) row.textContent = visible;
+    if (row.getAttribute('title') !== original) row.setAttribute('title', original);
+    if (row.getAttribute('aria-label') !== original) row.setAttribute('aria-label', original);
+  });
+}
+
+function restoreMenuRow(row) {
+  const saved = originalMenuLabels.get(row);
+  if (!saved) return;
+  if (row.textContent === saved.visible) row.textContent = saved.original;
+  if (saved.title === null) row.removeAttribute('title');
+  else row.setAttribute('title', saved.title);
+  if (saved.ariaLabel === null) row.removeAttribute('aria-label');
+  else row.setAttribute('aria-label', saved.ariaLabel);
+  originalMenuLabels.delete(row);
+}
+
 function scheduleUpdate() {
   if (updateScheduled) return;
   updateScheduled = true;
   Promise.resolve().then(() => {
     updateScheduled = false;
     updateHeadings();
+    if (active && typeof document !== 'undefined') updateFromMenu();
   });
 }
 
@@ -151,11 +191,19 @@ exports.activate = function activate() {
   if (AccountStore.listen) unsubscribeAccounts = AccountStore.listen(scheduleUpdate);
   const sidebar = document.querySelector(SIDEBAR_SELECTOR);
   if (sidebar) observeSidebar(sidebar);
-  documentObserver = new MutationObserver(() => {
+  documentObserver = new MutationObserver((mutations) => {
     const mounted = document.querySelector(SIDEBAR_SELECTOR);
     if (mounted && mounted !== observedSidebar) observeSidebar(mounted);
+    if (mutations.some((mutation) => {
+      const target = mutation.target.nodeType === 3 ? mutation.target.parentElement : mutation.target;
+      if (target && target.closest && target.closest('.composer-participant-field.from-field')) return true;
+      return Array.from(mutation.addedNodes || []).some((node) => node.nodeType === 1 &&
+        (node.matches('.composer-participant-field.from-field') ||
+          node.querySelector('.composer-participant-field.from-field')));
+    })) scheduleUpdate();
   });
-  documentObserver.observe(document.body, { childList: true, subtree: true });
+  documentObserver.observe(document.body, { childList: true, characterData: true, subtree: true });
+  scheduleUpdate();
 };
 
 exports.deactivate = function deactivate() {
@@ -168,6 +216,7 @@ exports.deactivate = function deactivate() {
   sidebarObserver = documentObserver = unsubscribeAccounts = observedSidebar = null;
   if (typeof document !== 'undefined') {
     document.querySelectorAll(`${SIDEBAR_SELECTOR} ${HEADING_SELECTOR}`).forEach(restoreHeading);
+    document.querySelectorAll(FROM_MENU_SELECTOR).forEach(restoreMenuRow);
   }
   updateScheduled = false;
 };

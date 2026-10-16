@@ -1,8 +1,8 @@
 # ACCOUNT IDENTITIES
 
-presenta alias e indicadores discretos por cuenta en el panel lateral y junto
-al remitente del compositor. no modifica el nombre, la dirección ni los datos
-de la cuenta.
+presenta alias e indicadores discretos por cuenta en el panel lateral, junto
+al remitente del compositor y en su menú de selección. no modifica el nombre,
+la dirección ni los datos de la cuenta.
 
 ## INSTALACION
 
@@ -30,7 +30,9 @@ cambiarlo. usa una clave por dirección de cuenta en minúsculas:
 `alias` define el nombre corto; `initial` acepta hasta dos caracteres;
 `indicator` admite `white`, `gray` y `dim`; `context` añade una etiqueta breve.
 si no hay entrada, se muestra la parte anterior a `@` y su inicial. la
-dirección completa sigue disponible en el título al pasar el cursor.
+dirección completa sigue disponible en el título al pasar el cursor por las
+cabeceras y las opciones del menú de remitente. el archivo debe contener JSON
+válido; usa `{}` si todavía no quieres configurar ninguna cuenta.
 
 ## LIMITACIONES Y PRIVACIDAD
 
