@@ -150,3 +150,23 @@
     background: @surface-selected;
   }
 }
+
+// Native attachment and send-reminder states remain the source of truth.
+.thread-list .list-item {
+  .thread-icon-attachment {
+    opacity: 1;
+    filter: grayscale(1) brightness(1.5);
+    border-left: 1px solid @white-30;
+  }
+
+  .thread-icon-reminder-pending,
+  .thread-icon-reminder-triggered {
+    filter: grayscale(1) brightness(1.5);
+    border-bottom: 1px solid @white-50;
+  }
+
+  .thread-icon-reminder-triggered {
+    border-bottom-color: #ffffff;
+    background-color: @surface-focused;
+  }
+}

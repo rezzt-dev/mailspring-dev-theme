@@ -1,0 +1,8 @@
+{
+  "name": "account-identities",
+  "main": "./main.js",
+  "version": "1.0.0",
+  "description": "Short account aliases and identity cues in the sidebar and composer.",
+  "engines": { "mailspring": ">=1.6.3" },
+  "license": "MIT"
+}

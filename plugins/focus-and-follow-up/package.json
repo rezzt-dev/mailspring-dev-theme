@@ -1,0 +1,10 @@
+{
+  "name": "focus-and-follow-up",
+  "main": "./main.js",
+  "version": "1.0.0",
+  "description": "Local follow-up reminders, reply detection and focused thread filters.",
+  "scripts": { "test": "node --test test/*.test.js" },
+  "engines": { "mailspring": ">=1.6.3" },
+  "windowTypes": { "default": true },
+  "license": "MIT"
+}

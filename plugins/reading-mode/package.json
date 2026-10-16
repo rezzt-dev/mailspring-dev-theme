@@ -1,0 +1,8 @@
+{
+  "name": "reading-mode",
+  "main": "./main.js",
+  "version": "1.0.0",
+  "description": "A distraction-free reading layout with comfortable and compact spacing.",
+  "engines": { "mailspring": ">=1.6.3" },
+  "license": "MIT"
+}

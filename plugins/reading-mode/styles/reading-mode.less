@@ -1,0 +1,59 @@
+.rezzt-reading-controls {
+  display: flex;
+  gap: 6px;
+  margin: 0 20px 14px;
+
+  button {
+    padding: 5px 9px;
+    color: #c6c6c6;
+    background: #101010;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+
+    &:hover, &:focus-visible, &[aria-pressed='true'] {
+      color: #ffffff;
+      border-color: #ffffff;
+    }
+  }
+}
+
+body.rezzt-reading-mode {
+  .column-RootSidebar,
+  .column-MessageListSidebar,
+  .toolbar-RootSidebar,
+  .toolbar-MessageListSidebar {
+    display: none !important;
+  }
+
+  .column-MessageList {
+    flex: 1 1 auto !important;
+    max-width: none !important;
+  }
+
+  .toolbar-MessageList .btn-toolbar:not(:hover):not(:focus-visible) {
+    opacity: 0.55;
+  }
+
+  #message-list {
+    .messages-wrap .scroll-region-content-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 30px 32px 45vh;
+    }
+
+    .message-header .message-actions,
+    .message-item-wrap.collapsed .message-actions {
+      opacity: 0.45;
+    }
+  }
+}
+
+body.rezzt-reading-mode.rezzt-reading-compact #message-list {
+  .messages-wrap .scroll-region-content-inner {
+    max-width: 820px;
+    padding: 12px 18px 25vh;
+  }
+
+  .message-subject-wrap { margin: 10px 0; }
+  .message-item-wrap { margin-bottom: 8px; }
+}

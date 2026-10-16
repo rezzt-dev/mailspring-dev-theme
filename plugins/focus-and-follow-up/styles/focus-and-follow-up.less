@@ -1,0 +1,157 @@
+.rezzt-focus-sidebar,
+.rezzt-focus-filters,
+.rezzt-focus-message-actions {
+  color: #c6c6c6;
+  font-family: 'Gilroy', Arial, sans-serif;
+  font-size: 12px;
+
+  button,
+  select,
+  input {
+    color: #c6c6c6;
+    background: #101010;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 0;
+    font: inherit;
+  }
+
+  button { cursor: pointer; }
+  button:hover,
+  button:focus-visible,
+  select:focus-visible,
+  input:focus-visible {
+    color: #ffffff;
+    border-color: #ffffff;
+  }
+}
+
+.rezzt-focus-sidebar {
+  order: 3;
+  flex: 0 1 auto;
+  min-width: 0;
+  max-height: 42%;
+  overflow: auto;
+  padding: 10px 12px 14px;
+  background: #101010;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+  .rezzt-focus-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 6px;
+    margin-bottom: 8px;
+    color: #ffffff;
+  }
+
+  button,
+  select { padding: 4px 6px; }
+
+  > select { width: 100%; margin-bottom: 8px; }
+
+  .rezzt-focus-task {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 3px 5px;
+    padding: 6px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+    .rezzt-focus-subject {
+      grid-column: 1 / -1;
+      overflow: hidden;
+      padding: 0;
+      text-align: left;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      background: transparent;
+      border: 0;
+      color: #ffffff;
+    }
+
+    small {
+      grid-column: 1 / -1;
+      overflow: hidden;
+      color: #999999;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    select { min-width: 0; }
+  }
+
+  .rezzt-focus-suggestions {
+    margin-top: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+    > strong { display: block; margin: 8px 0; }
+    > div { display: flex; align-items: center; justify-content: space-between; gap: 6px; margin: 5px 0; }
+    span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  }
+
+  .rezzt-focus-closed-toggle { margin-top: 8px; }
+  [role='alert'] { color: #f87171; }
+}
+
+.rezzt-focus-filters {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  min-width: 0;
+  max-width: 100%;
+  height: 100%;
+  overflow-x: auto;
+  padding: 0 7px;
+  white-space: nowrap;
+
+  button { flex: 0 0 auto; padding: 4px 6px; }
+  button.active { color: #000000; background: #ffffff; border-color: #ffffff; }
+}
+
+.rezzt-focus-quick-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 23px;
+  height: 23px;
+  padding: 0;
+  color: #ffffff;
+  background: #242424;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+}
+
+.rezzt-follow-up-indicator {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 17px;
+  height: 17px;
+  margin: 3px;
+  border: 1px solid #999999;
+  color: #c6c6c6;
+  font-weight: 700;
+  background: transparent;
+  cursor: pointer;
+}
+
+.rezzt-follow-up-indicator.overdue { border-color: #ffffff; color: #ffffff; }
+.rezzt-follow-up-indicator.idle { opacity: 0.35; }
+.rezzt-follow-up-indicator:hover,
+.rezzt-follow-up-indicator:focus-visible { opacity: 1; border-color: #ffffff; }
+
+.rezzt-focus-message-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0 20px 12px;
+  padding: 8px;
+  background: #101010;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  .rezzt-focus-label { margin-right: 6px; font-weight: 700; }
+  input,
+  button,
+  select { min-height: 25px; padding: 3px 6px; }
+  [role='alert'] { color: #f87171; }
+}
