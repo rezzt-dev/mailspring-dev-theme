@@ -1,0 +1,10 @@
+{
+  "name": "contact-context",
+  "main": "./main.js",
+  "version": "1.0.0",
+  "description": "Local contact notes, labels and thread context.",
+  "engines": { "mailspring": ">=1.6.3" },
+  "windowTypes": { "default": true, "thread-popout": true },
+  "scripts": { "test": "node --test test/*.test.js" },
+  "license": "MIT"
+}

@@ -11,6 +11,8 @@ a professional dark theme for mailspring based on the rezzt.dev editorial visual
 - optionally install `plugins/account-identities` with `developer → install a package manually...` for configurable account aliases and composer identity cues.
 - optionally install `plugins/reading-mode` the same way for a focused reading layout and a density toggle.
 - optionally install `plugins/focus-and-follow-up` for local reminders, reply detection, thread filters and a pending-work sidebar panel.
+- optionally install `plugins/privacy-guard` for remote-image warnings and a review of tracking parameters before opening links.
+- optionally install `plugins/contact-context` for local per-account contact notes, tags and thread statistics.
 
 ## DESIGN
 
@@ -33,5 +35,7 @@ received html emails and authored message content retain their original formatti
 - `plugins/account-identities/` contains the optional account-identity plugin and its local per-address configuration.
 - `plugins/reading-mode/` contains the optional reading-layout plugin.
 - `plugins/focus-and-follow-up/` contains the local productivity plugin and its tests.
+- `plugins/privacy-guard/` contains image warnings and tracking-link review.
+- `plugins/contact-context/` contains the local contact-context panel and tests.
 
 licensed under mit.

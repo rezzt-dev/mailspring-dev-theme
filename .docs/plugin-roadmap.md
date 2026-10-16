@@ -223,6 +223,12 @@ recordatorio se muestre en la cuenta equivocada.
 4. añadir notas y etiquetas locales;
 5. documentar claramente qué datos se procesan y dónde se almacenan.
 
+Implementación inicial: `plugins/privacy-guard` usa el bloqueo nativo de
+imágenes remotas, muestra avisos y ofrece revisión de enlaces con parámetros
+de seguimiento; `plugins/contact-context` muestra estadísticas del hilo y
+guarda notas y etiquetas locales separadas por cuenta y dirección. Los README
+de ambos plugins describen datos, almacenamiento y límites.
+
 ## criterios comunes de diseño
 
 Todos los plugins deberían cumplir estas reglas:

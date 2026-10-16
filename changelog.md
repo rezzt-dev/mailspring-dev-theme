@@ -11,6 +11,11 @@
 - usar `gilroy` como fuente unica de la interfaz nativa sin redistribuir sus archivos comerciales ni modificar el formato de los correos html recibidos
 - documentar la instalacion, los principios visuales, la licencia mit y la estructura de los archivos del tema
 - añadir un complemento de mailspring para mostrar solo el texto anterior a `@` en las etiquetas de cuenta del panel lateral sin cambiar los nombres originales
+- añadir `account-identities` para configurar alias, iniciales, contexto e indicadores por cuenta y mostrar la identidad activa en el compositor
+- añadir `reading-mode` para ocultar paneles laterales, ampliar el area de lectura y alternar entre densidad comoda y compacta
+- añadir `focus-and-follow-up` con recordatorios locales, deteccion de respuestas pendientes, estados de seguimiento y panel de pendientes
+- añadir `privacy-guard` para avisar sobre imagenes remotas, detectar posibles pixeles de seguimiento y revisar enlaces con parametros de tracking
+- añadir `contact-context` para mostrar estadisticas del hilo y gestionar notas privadas y etiquetas locales por cuenta y contacto
 
 #### CAMBIOS
 - unificar la toolbar y su barra de seleccion en `#101010`, eliminar los cortes entre columnas y aplicar la inversion completa de texto e iconos en sus controles
@@ -22,6 +27,16 @@
 - documentar en los ficheros de diseño la sobrescritura tipografica especifica de mailspring sobre las reglas generales de la web
 - oscurecer la paleta monocroma con el lienzo `#080808`, superficies `#101010` y `#111111`, y estados interactivos `#242424` para reforzar la profundidad visual del tema
 - actualizar `readme.md` con los nuevos colores base del sistema visual
+- evolucionar `short-account-labels` a `account-identities` y restaurar el texto original al desactivar el complemento
+- destacar los indicadores nativos de adjuntos y recordatorios de seguimiento con marcadores monocromos en `styles/thread-list.less`
+- integrar filtros de productividad para `requiere respuesta`, `importante`, `sin revisar` y `pendientes` con acciones rapidas desde la lista y la vista del mensaje
+- separar los recordatorios por `accountId` y `threadId`, conservarlos en la configuracion local y comprobar la cuenta antes de abrir el correo original
+- añadir pruebas para la deteccion de respuestas, la resolucion automatica y el aislamiento de recordatorios entre cuentas en `plugins/focus-and-follow-up/test/focus-store.test.js`
+- documentar la instalacion, el uso, las limitaciones y el tratamiento local de datos de los nuevos complementos
+
+#### SEGURIDAD
+- bloquear la carga automatica de imagenes mediante la preferencia nativa de `mailspring` y mostrar la url real y la url limpia antes de abrir enlaces con parametros conocidos de seguimiento
+- mantener las notas y etiquetas de `contact-context` en la configuracion local, separadas por `accountId` y direccion de correo, sin sincronizarlas ni enviarlas a servicios externos
 
 ### ENGLISH
 
@@ -32,6 +47,8 @@
 - use `gilroy` as the native interface's only font without redistributing its commercial font files or changing received html email formatting
 - document installation, visual principles, the mit license and the theme file structure
 - add a mailspring plugin to show only the text before `@` in sidebar account labels without changing the original account names
+- add `privacy-guard` to warn about remote images, detect possible tracking pixels, and review links with tracking parameters
+- add `contact-context` to show thread statistics and manage private notes and local tags per account and contact
 
 #### CHANGED
 - unify the toolbar and selection overlay on `#101010`, remove column color breaks, and apply complete text and icon inversion to toolbar controls
@@ -43,3 +60,13 @@
 - document the mailspring-specific typography override over the website's general design rules in the design files
 - darken the monochrome palette with the `#080808` canvas, `#101010` and `#111111` surfaces, and `#242424` interactive states to reinforce the theme's visual depth
 - update `readme.md` with the visual system's new base colors
+- evolve `short-account-labels` into `account-identities` and restore the original label when the plugin is deactivated
+- emphasize native attachment and follow-up reminder indicators with monochrome markers in `styles/thread-list.less`
+- add productivity filters for `requires reply`, `important`, `unreviewed` and `pending` with quick actions from the thread list and message view
+- scope reminders by `accountId` and `threadId`, persist them in local configuration, and verify the account before opening the original email
+- add tests for reply detection, automatic resolution, and cross-account reminder isolation in `plugins/focus-and-follow-up/test/focus-store.test.js`
+- document installation, usage, limitations, and local data handling for the new plugins
+
+#### SECURITY
+- block automatic image loading through Mailspring's native preference and show the real and cleaned URLs before opening links with known tracking parameters
+- keep `contact-context` notes and tags in local configuration, separated by `accountId` and email address, without syncing or sending them to external services

@@ -1,0 +1,11 @@
+{
+  "name": "privacy-guard",
+  "main": "./main.js",
+  "version": "1.0.0",
+  "description": "Remote image warnings and local tracking-link review.",
+  "engines": { "mailspring": ">=1.6.3" },
+  "windowTypes": { "default": true, "thread-popout": true },
+  "syncInit": true,
+  "scripts": { "test": "node --test test/*.test.js" },
+  "license": "MIT"
+}
