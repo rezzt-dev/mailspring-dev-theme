@@ -18,6 +18,9 @@
 - añadir `contact-context` para mostrar estadisticas del hilo y gestionar notas privadas y etiquetas locales por cuenta y contacto
 
 #### CAMBIOS
+
+- completar las guías de gestión y el contexto específico del proyecto; conservar las reglas técnicas y verificar las rutas
+- corregir el ejemplo de promociones entre ramas para evitar destinos idénticos al origen
 - unificar la toolbar y su barra de seleccion en `#101010`, eliminar los cortes entre columnas y aplicar la inversion completa de texto e iconos en sus controles
 - centralizar los roles de superficie y estado en `styles/ui-variables.less`, mejorar el contraste de metadatos y normalizar recordatorios, notas y errores en toda la interfaz
 - actualizar `readme.md` con la asignacion de tonos para lienzo, paneles, popovers, campos y estados interactivos
@@ -55,6 +58,9 @@
 - add `contact-context` to show thread statistics and manage private notes and local tags per account and contact
 
 #### CHANGED
+
+- complete repository management guides and project-specific context; preserve technical rules and verify paths
+- correct the branch promotion example to avoid destinations identical to the source
 - unify the toolbar and selection overlay on `#101010`, remove column color breaks, and apply complete text and icon inversion to toolbar controls
 - centralize surface and state roles in `styles/ui-variables.less`, improve metadata contrast, and normalize reminders, notes, and errors throughout the interface
 - update `readme.md` with the color assignment for canvas, panels, popovers, fields, and interactive states
